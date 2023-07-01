@@ -9,8 +9,8 @@ import java.util.concurrent.Executors;
 public class RoomServiceImpl implements Room Service {
     private final RoomRepository roomRepository;
 
-    List<Room> getEmptyRooms() {
-        return roomRepository.getEmptyRooms();
+    List<Room> getAvailableRooms() {
+        return roomRepository.getAvailableRooms();
     }
     Room updateRoomAvailabilityByRoomNo(String roomNo) {
         Room roomUpdated = roomRepository.getRoomByRoomNo(roomNo);
@@ -19,6 +19,10 @@ public class RoomServiceImpl implements Room Service {
                 .available(roomUpdated.getAvailability() ^ 1)
                 .build();
         return roomRepository.save(roomUpdated);
+    }
+
+    char getRoomByRoomNo(String roomNo) {
+        return roomNo.charAt(0);
     }
 
 }

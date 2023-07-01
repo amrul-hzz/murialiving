@@ -11,8 +11,8 @@ public class RoomController {
     private final RoomService roomService;
 
     @GetMapping("/empty")
-    public ResponseEntity<List<Room>> getEmptyRooms() {
-        var response = roomService.getEmptyRooms();
+    public ResponseEntity<List<Room>> getAvailableRooms() {
+        var response = roomService.getAvailableRooms();
         return ResponseEntity.ok(response);
     }
 
