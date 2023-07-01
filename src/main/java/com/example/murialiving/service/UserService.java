@@ -2,7 +2,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface UserService {
-    <List> getAllUsers();
+    List<User> getAllUsers();
     User getUserByUsername(String username);
     User createUser(UserRequest request);
     User updateUserByRoomNumber(String roomNo, UserRequest request);

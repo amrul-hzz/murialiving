@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     @Override
-    public <List> getAllUsers() {
+    public List<User> getAllUsers() {
         return userRepository.getAllUsers();
     }
 
@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User createUser(UserRequest request){
         // TODO: validateUserRequest(request);
-        User user = user.builder()
+        User user = User.builder()
                 .roomNo(request.getRoomNo())
                 .username(request.getUsername())
                 .password(request.getPassword())
@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User updateUserByRoomNumber(String roomNo, UserRequest request){
-        User userUpdated = user.builder()
+        User userUpdated = User.builder()
                 .roomNo(roomNo)
                 .username(request.getUsername())
                 .password(request.getPassword())

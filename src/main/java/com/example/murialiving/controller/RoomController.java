@@ -17,8 +17,8 @@ public class RoomController {
     }
 
     @PutMapping("/update/{roomNo}")
-    public ResponseEntity<User> updateRoomAvailabilityByRoomNumber(@PathVariable String roomNo) {
-        var response = roomService.updateRoomAvailabilityByRoomNumber(roomNo);
+    public ResponseEntity<Room> updateRoomAvailabilityByRoomNo(@PathVariable String roomNo) {
+        var response = roomService.updateRoomAvailabilityByRoomNo(roomNo);
         return ResponseEntity.ok(response);
     }
 
