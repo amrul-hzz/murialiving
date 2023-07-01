@@ -7,7 +7,6 @@ import org.springframework.web.server.ResponseStatusException;
 @RestController
 @RequestMapping("/user")
 @RequiredArgsConstructor
-
 public class UserController {
     private final UserService userService;
 
